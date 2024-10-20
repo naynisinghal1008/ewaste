@@ -5,11 +5,18 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 img_size = 224  # Size to which each image will be resized (224x224 pixels)
 batch_size = 32  # Batch size for training
 
-# Create an instance of ImageDataGenerator for preprocessing
+# Create an instance of ImageDataGenerator for preprocessing with augmentations
 datagen = ImageDataGenerator(
-    rescale=1./255,  # Normalize pixel values (scale them to 0-1)
-    validation_split=0.2  # Split 20% of data for validation
+    rescale=1./255,
+    validation_split=0.2,
+    rotation_range=20,  # Rotate images
+    width_shift_range=0.2,  # Shift horizontally
+    height_shift_range=0.2,  # Shift vertically
+    shear_range=0.2,  # Shearing
+    zoom_range=0.2,  # Zoom
+    horizontal_flip=True  # Flip horizontally
 )
+
 
 # Corrected paths
 train_dir = 'C:/Users/singh/Downloads/ewastedetection/archive/modified-dataset/train'
