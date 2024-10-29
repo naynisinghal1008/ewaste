@@ -1,0 +1,1 @@
+python val.py --weights runs/train/exp/weights/best.pt --data data.yaml
