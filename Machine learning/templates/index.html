@@ -1,0 +1,74 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>E-Waste Detection</title>
+</head>
+<body>
+    <h1>Upload an Image for E-Waste Detection</h1>
+    <form action="/detect" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Waste Collection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to the E-Waste Collection Platform</h1>
+    <p>Upload your e-waste images for proper disposal.</p>
+
+    <!-- Form for file upload -->
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="file" id="fileInput" required>
+        <button type="submit">Upload Image</button>
+    </form>
+
+    <!-- Pop-up message -->
+    <div id="popup" style="display:none;">
+        <div id="popupMessage"></div>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        // Handle form submission and image upload
+        document.getElementById('uploadForm').onsubmit = async function (e) {
+            e.preventDefault();
+
+            let formData = new FormData();
+            formData.append('file', document.getElementById('fileInput').files[0]);
+
+            // Send the image to the server
+            let response = await fetch('/upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            let data = await response.json();
+
+            // Show the pop-up based on detection
+            if (data.detected) {
+                showPopup(data.message);
+            } else {
+                showPopup(data.message);
+            }
+        };
+
+        // Function to show the pop-up
+        function showPopup(message) {
+            document.getElementById('popupMessage').innerText = message;
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        // Function to close the pop-up
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
