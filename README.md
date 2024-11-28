@@ -46,26 +46,3 @@ Users earn points for reporting e-waste, completing recycling challenges, and pa
 **10. Seamless AI, ML & Geolocation Integration:**
 The platform combines AI, ML, and GPS tracking to efficiently address e-waste problems while engaging the community.
 
-## Prototype
-
-**WEB APPLICATION**
-
-
-
-
-
-## Instructions for Participants
-
-Welcome to the project repository! Please follow the instructions below to upload your required files directly to the root directory. Each participant must upload three items:
-
-### Required Uploads
-
-1. *Presentation File*
-   - Upload your PowerPoint presentation file (e.g., your-presentation-file.pptx) directly to the root directory.
-   - Download the PowerPoint presentation template from this link : https://drive.google.com/file/d/1S9pVHFo2i4Z5Phy0fxeDucCDcixeYY-d/view?usp=sharing
-2. *Demo Video*
-   - Upload your demo video file (e.g., demo.mp4) directly to the root directory.
-   
-##  Click on this masterlink for other instructions : https://drive.google.com/drive/folders/1nlJZWqBq1E3C7OUGk5jN_d30mlX6inxk
-
-## Link to the Feedback form : https://forms.gle/Fp3pNRAW3HXJu97k6
